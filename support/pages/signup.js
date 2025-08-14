@@ -30,7 +30,7 @@ export const signupPage = (page) => {
 
         //await page.waitForTimeout(5000);
 
-        await expect(page.getByRole('textbox', { name: 'Rua' })).toHaveValue('Rua Dom Pedro II');
+        await expect(page.getByRole('textbox', { name: 'Rua' })).toHaveValue('Avenida Cabo Branco');
 
         await page
             .getByPlaceholder('Número', { exact: true })
