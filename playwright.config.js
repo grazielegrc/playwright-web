@@ -53,7 +53,7 @@ export default defineConfig({
     //browserName: 'chromium',
 
      // Run browser in headless mode. Defaults to true.
-     headless: false,
+     headless: true,
 
   },
 
