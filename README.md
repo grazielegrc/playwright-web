@@ -1,2 +1,3 @@
-# playwright-web
-POC using Playwright to test a web application
+# Playwright
+
+POC using Playwright with JavaScript to test a web application
