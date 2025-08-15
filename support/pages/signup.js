@@ -3,7 +3,7 @@ import {expect} from '@playwright/test';
 export const signupPage = (page) => {
 
     const open = async () => {
-        await page.goto('https://walkdog.vercel.app/signup');
+        await page.goto('/signup');
     }
 
     const submit = async (walker) => {
