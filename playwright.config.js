@@ -1,5 +1,10 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import baseEnvUrl from './tests/utils/environmentBaseUrls';
+import dotenv from 'dotenv';
+import path from 'path';
+
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * Read environment variables from file.
@@ -37,8 +42,12 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+     /* Base URL to use in actions like `await page.goto('/')`. */
+    baseURL: process.env.ENV === 'production' 
+    ? baseEnvUrl.production.home
+    : process.env.ENV === 'staging' 
+      ? baseEnvUrl.staging.home
+      : baseEnvUrl.local.home, 
 
      // Capture screenshot after each test failure. Options include 'off', 'on' and 'only-on-failure'
      screenshot: 'only-on-failure',
